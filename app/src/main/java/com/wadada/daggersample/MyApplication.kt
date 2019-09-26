@@ -3,7 +3,6 @@ package com.wadada.daggersample
 import android.app.Application
 import com.wadada.daggersample.di.AppComponent
 import com.wadada.daggersample.di.DaggerAppComponent
-import javax.inject.Provider
 
 class MyApplication : Application() {
     lateinit var appComponent: AppComponent
@@ -13,8 +12,5 @@ class MyApplication : Application() {
         appComponent = DaggerAppComponent.builder()
             .application(this)
             .build()
-
-        val hogeProvider: Provider<Hoge> = appComponent.hogeProvider()
-        val hoge: Hoge = hogeProvider.get()
     }
 }

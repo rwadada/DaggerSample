@@ -1,9 +1,6 @@
 package com.wadada.daggersample
 
-import android.util.Log
-import javax.inject.Inject
-
-class Hoge @Inject constructor() {
+class Hoge {
     override fun toString(): String =
         "HOGE"
 }
