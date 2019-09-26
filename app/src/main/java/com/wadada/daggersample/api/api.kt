@@ -1,3 +1,12 @@
 package com.wadada.daggersample.api
 
-interface Api {}
+import android.util.Log
+
+interface Api {
+    companion object {
+        private val TAG: String = Api::class.java.simpleName
+    }
+    fun echo() {
+        Log.d(TAG, TAG)
+    }
+}

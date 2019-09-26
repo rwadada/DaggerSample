@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import com.wadada.daggersample.api.Api
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +16,9 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var fuga: Fuga
+
+    @Inject
+    lateinit var api: Api
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,5 +35,6 @@ class MainActivity : AppCompatActivity() {
 
         Log.d(TAG, hoge.toString())
         fuga.echo()
+        api.echo()
     }
 }
