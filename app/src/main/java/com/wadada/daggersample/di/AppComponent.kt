@@ -7,7 +7,12 @@ import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Provider
 
-@Component
+@Component(
+    modules = [
+        AppModule::class,
+        BindModule::class
+    ]
+)
 interface AppComponent {
     @Component.Builder
     interface Builder {

@@ -13,6 +13,9 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var hoge: Hoge
 
+    @Inject
+    lateinit var fuga: Fuga
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -27,5 +30,6 @@ class MainActivity : AppCompatActivity() {
         myApplication.appComponent.inject(this)
 
         Log.d(TAG, hoge.toString())
+        fuga.echo()
     }
 }
