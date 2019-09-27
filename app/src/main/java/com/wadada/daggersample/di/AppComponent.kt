@@ -9,7 +9,7 @@ import javax.inject.Provider
 
 @Component(
     modules = [
-        AppModule::class,
+        ParentModule::class,
         BindModule::class
     ]
 )
