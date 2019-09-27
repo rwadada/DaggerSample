@@ -1,22 +1,30 @@
 package com.wadada.daggersample.di
 
-import com.wadada.daggersample.Fuga
-import com.wadada.daggersample.Hoge
+import com.wadada.daggersample.Fruit
 import dagger.Module
 import dagger.Provides
+import javax.inject.Named
 
 @Module
 object AppModule {
 
-    @Provides
     @JvmStatic
-    fun provideHoge(): Hoge {
-        return Hoge()
+    @Provides
+    fun provideFruit(): Fruit {
+        return Fruit()
     }
 
-    @Provides
     @JvmStatic
-    fun provideFuga(hoge: Hoge): Fuga {
-        return Fuga(hoge)
+    @Named("apple")
+    @Provides
+    fun provideApple(): Fruit {
+        return Fruit("Apple")
+    }
+
+    @JvmStatic
+    @Named("banana")
+    @Provides
+    fun provideBanana(): Fruit {
+        return Fruit("Banana")
     }
 }
