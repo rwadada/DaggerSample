@@ -4,16 +4,20 @@ import android.app.Application
 import com.wadada.daggersample.Fruit
 import com.wadada.daggersample.Hoge
 import com.wadada.daggersample.MainActivity
+import com.wadada.daggersample.SubActivity
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
 import javax.inject.Provider
+import javax.inject.Singleton
 
+@Singleton
 @Component(
     modules = [
         ParentModule::class,
         BindModule::class,
-        AppModule::class
+        AppModule::class,
+        SingletonModule::class
     ]
 )
 interface AppComponent {
@@ -28,6 +32,7 @@ interface AppComponent {
     fun hogeProvider(): Provider<Hoge>
 
     fun inject(activity: MainActivity)
+    fun inject(activity: SubActivity)
 
     fun fruit(): Fruit
 

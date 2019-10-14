@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DaggerSample</string>
+    <string name="button">Button</string>
+    <string name="subactivity">SubActivity</string>
 </resources>
